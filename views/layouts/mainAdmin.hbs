@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{title}}</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    {{!-- Fontawesome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{!-- CSS --}}
+    <link rel="stylesheet" href="/css/styleAdmin.css">
+</head>
+<body>
+
+	{{> navbarAdmin}}	
+
+	<div id="wrapper" class="mt-4">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li><a href="/admin">Beranda</a></li>
+        <li><a href="/admin/informasi-kamar">Manage Kamar Hotel</a></li>
+        <li><a href="/admin/informasi-hotel">Manage Hotel</a></li>
+        <li><a href="/admin/logout">Keluar</a></li>
+      </ul>
+    </div>
+    
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+
+        <div class="row">
+						{{{body}}}
+        </div>
+
+       </div>
+     </div>
+
+    </div>
+	
+	
+
+		<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    {{!-- Script --}}
+    <script src="/javascripts/script.js"></script>
+</body>
+</html>

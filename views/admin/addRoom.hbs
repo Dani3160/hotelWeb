@@ -1,0 +1,27 @@
+  <div class="col-lg-12 mt-5">
+
+    <a href="#" class="btn" id="menu-toggle"><span class="fa fa-bars"></span></a>
+    <h1 class="text-center">Ubah Informasi Kamar Hotel</h1>
+
+    <div class="col-md-12">
+        <form action="/admin/insert" method="post">
+          <input type="hidden" name="_id" value="{{value._id}}">
+            <div class="form-group">
+                <input type="text" name="nomor" class="form-control" placeholder="Masukan nomor kamar..." value="{{value.nomor}}">
+            </div>
+            <div class="form-group">
+                <input type="number" name="jmlKasur" class="form-control" placeholder="Masukan jumlah tempat tidur..." value="{{value.jmlKasur}}">
+            </div>
+            <div class="form-group">
+                <input type="text" name="fasilitas" class="form-control" placeholder="Masukan fasilitas kamar..." value="{{value.fasilitas}}">
+            </div>
+            <div class="form-group">
+                <input type="text" name="harga" class="form-control" placeholder="Masukan harga kamar..." value="{{value.harga}}">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">Ubah</button>
+            </div>
+        </form>
+    </div>
+
+  </div>

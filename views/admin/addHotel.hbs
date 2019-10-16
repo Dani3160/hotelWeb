@@ -1,0 +1,24 @@
+  <div class="col-lg-12 mt-5">
+
+      <a href="#" class="btn" id="menu-toggle"><span class="fa fa-bars"></span></a>
+      <h1 class="text-center">Ubah Informasi Hotel</h1>
+
+      <div class="col-md-12">
+          <form action="/admin/insert/hotel" method="post">
+            <input type="hidden" name="_id" value="{{value._id}}">
+              <div class="form-group">
+                  <input type="text" name="nama" class="form-control" placeholder="Masukan nama hotel..." value="{{value.nama}}">
+              </div>
+              <div class="form-group">
+                  <input type="text" name="alamat" class="form-control" placeholder="Masukan alamat hotel..." value="{{value.alamat}}">
+              </div>
+              <div class="form-group">
+                  <input type="text" name="kontak" class="form-control" placeholder="Masukan kontak hotel..." value="{{value.kontak}}">
+              </div>
+              <div class="form-group">
+                  <button class="btn btn-primary">Ubah</button>
+              </div>
+          </form>
+      </div>
+
+    </div>

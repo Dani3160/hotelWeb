@@ -1,0 +1,92 @@
+
+
+      <div class="col-lg-12 mt-4">
+
+        <a href="#" class="btn" id="menu-toggle"><span class="fa fa-bars"></span></a>
+        <h1 class="text-center">Manage Informasi Hotel</h1>
+
+      </div>
+        
+
+        <div class="col-md-12 mt-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <button class="btn btn-primary" style="border-radius: 10px;" data-toggle="modal" data-target="#myModal">Tambah</button>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="row ml-5">
+                        <div class="col-md-7 ml-5">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Cari...">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-success"><i class="fa fa-search"></i> Cari</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 mt-4">
+            <table class="table table-striped table-bordered">
+                <thead class="text-center">
+                    <tr>
+                        <th>Nama</th>
+                        <th>Alamat</th>
+                        <th>Kontak</th>
+                        <th colspan="2">Aksi</th>
+                    </tr>
+                </thead>
+                {{# each list}}
+                <tbody class="text-center">
+                    <tr>
+                        <td>{{this.nama}}</td>
+                        <td>{{this.alamat}}</td>
+                        <td>{{this.kontak}}</td>
+                        <td><a href="/admin/informasi-hotel/{{this._id}}" class="btn btn-success">Ubah</a></td>
+                        <td><a href="/admin/delete/hotel/{{this._id}}" class="btn btn-danger" onclick="return confirm('Yakin Hapus Data?');">Hapus</a></td>
+                    </tr>
+                </tbody>
+                {{/ each}}
+            </table>
+        </div>
+
+   
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Kelola Kamar</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form action="/admin/insert/hotel" method="post">
+          <input type="hidden" name="_id">
+          <div class="form-group">
+            <input type="text" name="nama" class="form-control" placeholder="Masukkan nama hotel...">
+          </div>
+          <div class="form-group">
+            <input type="text" name="alamat" class="form-control" placeholder="Masukkan alamat hotel...">
+          </div>
+          <div class="form-group">
+            <input type="text" name="kontak" class="form-control" placeholder="Masukkan kontak hotel...">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary float-right">Simpan</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
