@@ -71,6 +71,38 @@ router.post('/login', function(req, res, next) {
 
 // End Login
 
+// Register
+
+router.get('/registrasi', function(req, res, next){
+    let data = {
+        layout: 'mainLogin',
+        title: 'Sign Up',
+    };
+    res.render('register', data);
+});
+
+function insertUser(req, res){
+    var item = {
+        nama: req.body.nama,
+        email: req.body.email,
+        pass: req.body.password
+    };
+
+    var data = new userData(item);
+    data.save();
+    res.redirect('/admin');
+}
+
+router.post('/registrasi', (req, res) => {
+    if(req.body._id == ''){
+        insertUser(req, res);
+    }else{
+        console.log("Error");
+    }
+});
+
+// End Register
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
  
